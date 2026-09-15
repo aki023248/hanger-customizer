@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="カスタムハンガーの設定作成">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23244c40'/%3E%3Cpath d='M7 11h18l-3 13H10z' fill='%23f4f2ed'/%3E%3C/svg%3E">
+  <title>Hanger Customize</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header><span class="eyebrow">CUSTOM HANGER</span><h1>あなたのハンガーをつくる</h1><p>文字・幅・カラーを選んで、設定をコピーできます。</p></header>
+    <section class="customizer" aria-label="ハンガー設定">
+      <div class="preview"><div id="viewer" role="img" aria-label="カスタマイズしたハンガーの3Dプレビュー"></div><div class="model-label" id="previewText">YOUR NAME</div><p id="widthReadout">ドラッグで回転・スクロールで拡大</p></div>
+      <form id="form">
+        <label>Text <small>最大10文字</small><input id="text" maxlength="10" value="YOUR NAME" required></label>
+        <div class="two"><label>Font Size<input id="size" type="number" min="8" max="20" value="12" required></label><label>Width<input id="width" type="number" min="-30" max="30" value="0" required></label></div>
+        <label>Body Color<select id="body"></select></label>
+        <label>Text Color<select id="ink"></select></label>
+        <button type="submit">設定をコピー</button>
+        <textarea id="result" aria-label="コピーする設定" readonly></textarea>
+        <p class="notice" id="notice" aria-live="polite"></p>
+      </form>
+    </section>
+    <footer>本体と文字は別フィラメントで印刷できます。</footer>
+  </main>
+  <script src="palette.js"></script><script type="module" src="app.js"></script>
+</body>
+</html>
